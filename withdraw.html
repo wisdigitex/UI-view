@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Fund – Withdraw</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: { primary: "#06bcf9", background: "#0A0F1C" },
+          fontFamily: { display: ["Space Grotesk", "sans-serif"] },
+          borderRadius: { xl: "1.25rem" },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0,'wght' 300,'GRAD' 0,'opsz' 24;
+    }
+    .glow-blue { box-shadow: 0 0 15px rgba(6,188,249,0.35); }
+    .text-glow { text-shadow: 0 0 8px rgba(6,188,249,0.5); }
+  </style>
+</head>
+
+<body class="bg-background font-display text-white">
+  <div class="min-h-screen w-full flex justify-center bg-background">
+    <div class="w-[420px] max-w-full bg-background">
+      <div class="relative flex min-h-screen flex-col bg-background overflow-y-auto">
+
+        <!-- Top bar -->
+        <header class="sticky top-0 z-10 flex items-center justify-between bg-background/80 backdrop-blur-sm p-4 pb-2">
+          <div class="flex size-12 items-center justify-start text-primary">
+            <span class="material-symbols-outlined text-4xl text-glow">trending_up</span>
+          </div>
+          <h1 class="flex-1 text-center text-xl font-bold tracking-[-0.015em] text-glow">
+            Withdraw Funds
+          </h1>
+          <div class="flex w-12 items-center justify-end">
+            <button onclick="location.href='index.html'" class="h-10 w-10 flex items-center justify-center rounded-xl bg-transparent text-white/80">
+              <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+          </div>
+        </header>
+
+        <main class="flex-grow px-4 pt-4 pb-28 space-y-6">
+          <section class="rounded-xl border border-primary/20 bg-[#051622] p-5 space-y-4">
+            <!-- Amount -->
+            <div>
+              <label class="text-xs text-white/60 mb-2 block">Amount</label>
+              <div class="flex items-center justify-between rounded-xl border border-primary/40 bg-background px-4 py-3">
+                <input type="text" placeholder="0.00" class="bg-transparent text-sm outline-none w-full"/>
+                <span class="text-xs text-primary font-bold ml-2 cursor-pointer">USDT</span>
+              </div>
+            </div>
+
+            <!-- Wallet address -->
+            <div>
+              <label class="text-xs text-white/60 mb-2 block">Wallet Address</label>
+              <div class="rounded-xl border border-white/20 bg-background px-4 py-3">
+                <input type="text" placeholder="Enter your wallet address" class="bg-transparent text-sm outline-none w-full placeholder:text-white/40"/>
+              </div>
+            </div>
+
+            <!-- Network -->
+            <div>
+              <label class="text-xs text-white/60 mb-2 block">Network</label>
+              <div class="flex items-center justify-between rounded-xl border border-white/20 bg-background px-4 py-3">
+                <span class="text-sm text-white/70">Select network</span>
+                <span class="material-symbols-outlined text-white/60 text-xl">expand_more</span>
+              </div>
+            </div>
+          </section>
+
+          <button class="w-full rounded-full bg-primary text-background font-bold py-3 mt-2 glow-blue">
+            Withdraw
+          </button>
+
+          <p class="text-xs text-center text-white/50">
+            Backend will process withdrawals.
+          </p>
+        </main>
+
+        <!-- Bottom nav -->
+        <footer class="fixed bottom-0 left-0 right-0 z-10 bg-background/80 backdrop-blur-sm">
+          <div class="mx-auto w-[420px] max-w-full">
+            <div class="grid grid-cols-3 gap-4 p-4">
+              <button onclick="location.href='index.html'" class="flex flex-col items-center justify-center gap-1 rounded-xl bg-transparent py-2 text-white/60 border border-white/10">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span class="text-xs font-bold">Dashboard</span>
+              </button>
+              <button onclick="location.href='history.html'" class="flex flex-col items-center justify-center gap-1 rounded-xl bg-transparent py-2 text-white/60 border border-white/10">
+                <span class="material-symbols-outlined">receipt_long</span>
+                <span class="text-xs font-bold">History</span>
+              </button>
+              <button onclick="location.href='stats.html'" class="flex flex-col items-center justify-center gap-1 rounded-xl bg-transparent py-2 text-white/60 border border-white/10">
+                <span class="material-symbols-outlined">stacked_line_chart</span>
+                <span class="text-xs font-bold">Stats</span>
+              </button>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
